@@ -1,33 +1,64 @@
-# Portfolio Website
+# Portfolio Website (Next.js 15)
 
-A single-page portfolio with dark mode, animated accents, reveal-on-scroll transitions, and responsive layout.
+A multipage Next.js portfolio with dark/light theming, Framer Motion page transitions, and a declassified enterprise aesthetic.
 
-## Version status
+## Local preview instructions
 
-Initial baseline established from the first multi-section portfolio build. Use this as the starting point for future iterations.
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Start the dev server:
+   ```bash
+   npm run dev
+   ```
+3. Open the preview:
+   - http://localhost:3000
 
-## Cheapest hosting options
+## Production build preview
 
-1. **GitHub Pages (free)**
-   - Push this repo to GitHub.
-   - In repo settings → Pages → deploy from `main` branch.
-   - Custom domain supported with free HTTPS.
+1. Create an optimized build:
+   ```bash
+   npm run build
+   ```
+2. Run the production server:
+   ```bash
+   npm run start
+   ```
+3. Visit:
+   - http://localhost:3000
 
-2. **Cloudflare Pages (free)**
-   - Connect GitHub, select this repo.
-   - Build command: _none_. Output: `/`.
-   - Provides global CDN + free HTTPS.
+## Hosting instructions
 
-3. **Netlify (free)**
-   - Connect GitHub, select this repo.
-   - Build command: _none_. Publish directory: `/`.
-   - Includes form handling if you later add Netlify Forms.
+### Vercel (recommended)
+1. Import the GitHub repo into Vercel.
+2. Framework preset: **Next.js**
+3. Build command: `npm run build`
+4. Output: **Default** (handled by Next.js)
+5. Deploy.
 
-## Update content
+### Netlify
+1. Connect the repo.
+2. Build command: `npm run build`
+3. Publish directory: `.next`
+4. Add the Next.js Runtime (Netlify will prompt automatically).
 
-- Replace the experience and project bullet points in `index.html`.
-- Swap `resume.pdf` with your final resume file for download.
-- Update links in the contact section.
-- Edit the stats in the hero section to match your metrics.
-- Replace any certification images in `assets/` with official logos when available.
-- The vertical sidebar navigation is controlled by the `.side-nav` styles in `styles.css`.
+### Cloudflare Pages
+1. Connect the repo.
+2. Build command: `npm run build`
+3. Build output directory: `.next`
+4. Add the `@cloudflare/next-on-pages` adapter if prompted by Cloudflare.
+
+## Asset downloads & placement
+
+Place custom assets in `public/images/` so Next.js can serve them with the `<Image />` component:
+
+| Asset | File name | Location | Notes |
+| --- | --- | --- | --- |
+| Headshot | `headshot-placeholder.svg` (replace with your photo, keep name or update in `app/page.js`) | `public/images/` | Update the `src` in `app/page.js` if the filename changes. |
+| Project diagrams | `project-topology.svg`, `project-cloud.svg` | `public/images/` | Used in `app/operations/page.js`. Replace with real topology/architecture graphics. |
+| Company logos | `sports-excitement-logo.svg`, `dreamstudio-logo.svg` | `public/images/` | Used in `app/briefing/page.js`. |
+| Stack icons | `aws-icon.svg`, `python-icon.svg`, `burp-icon.svg` | `public/images/` | Used in `app/briefing/page.js`. |
+| Cert badges | `osep-badge.svg`, `crte-badge.svg`, `aws-security-badge.svg` | `public/images/` | Used in `app/certifications/page.js`. |
+
+If you download official logos or badges, place them in `public/images/` and update the corresponding `src` paths in the page files above.
