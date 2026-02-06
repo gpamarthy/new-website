@@ -16,7 +16,7 @@ export const metadata = {
   description:
     "Declassified enterprise portfolio focused on offensive security, cloud risk reduction, and executive-ready remediation.",
   alternates: {
-    canonical: metadataBase
+    canonical: siteConfig.canonicalUrl
   },
   openGraph: {
     title: `${siteConfig.name} | Offensive Security Engineer`,

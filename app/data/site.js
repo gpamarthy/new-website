@@ -5,7 +5,7 @@ export const siteConfig = {
     "I secure cloud-native businesses by translating adversary tradecraft into measurable risk reduction. I deliver executive-ready remediation roadmaps, hardened identity controls, and resilient detection pipelines.",
   location: "Remote · Global",
   email: "hello@gouthampamarthy.com",
-  resumeUrl: "/resume.pdf",
+  resumeUrl: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/resume.pdf`,
   canonicalUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://gpamarthy.github.io/new-website/"
 };
 

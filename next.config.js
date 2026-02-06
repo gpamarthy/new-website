@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const enableRuntimeHeaders = process.env.ENABLE_RUNTIME_HEADERS === "true";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const nextConfig = {
   output: "export",
@@ -7,6 +8,12 @@ const nextConfig = {
     ignoreDuringBuilds: true
   },
   trailingSlash: true,
+  ...(basePath
+    ? {
+        basePath,
+        assetPrefix: `${basePath}/`
+      }
+    : {}),
   images: {
     formats: ["image/avif", "image/webp"],
     unoptimized: true

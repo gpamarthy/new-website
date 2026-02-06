@@ -31,8 +31,9 @@ This project is configured for static export (`output: "export"`) so you can dep
    - `ENABLE_RUNTIME_HEADERS=true`
 
 ### Repo path support (`/new-website/`)
-If deploying to `https://<user>.github.io/new-website/`, keep:
+If deploying to `https://<user>.github.io/new-website/`, set:
 - `NEXT_PUBLIC_SITE_URL=https://<user>.github.io/new-website/`
+- `NEXT_PUBLIC_BASE_PATH=/new-website`
 
 ## Custom domain hosting (GitHub Pages)
 
