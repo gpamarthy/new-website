@@ -69,19 +69,55 @@ At your DNS provider:
 - For `www`, add **CNAME**:
   - `www` → `<your-github-username>.github.io`
 
-## Asset downloads & placement
+## Asset downloads & placement (exact names + locations)
 
-Place custom assets in `public/images/` so Next.js can serve them with the `<Image />` component:
+If an image is missing or named differently, it will not render. Use the exact file names below.
 
-| Asset | File name | Location | Notes |
+### 1) Put files in the correct folders
+
+- **All images/icons/badges/logos:** `public/images/`
+- **Resume PDF:** `public/resume.pdf`
+
+### 2) Use these exact image file names
+
+| Section | Required file name | Put it here | Referenced from |
 | --- | --- | --- | --- |
-| Headshot | `headshot-placeholder.svg` | `public/images/` | Update `app/page.js` if the filename changes. |
-| Project diagrams | `project-topology.svg`, `project-cloud.svg` | `public/images/` | Used in the Projects section. |
-| Company logos | `sports-excitement-logo.svg`, `dreamstudio-logo.svg` | `public/images/` | Used in Experience timeline. |
-| Certification badges | `osep-badge.svg`, `crte-badge.svg`, `aws-security-badge.svg` | `public/images/` | Used in Certifications section. |
-| Resume | `resume.pdf` | `public/` | Replace placeholder with your actual resume. |
+| Hero headshot | `headshot-placeholder.svg` | `public/images/headshot-placeholder.svg` | `app/page.js` |
+| Project 1 diagram | `project-topology.svg` | `public/images/project-topology.svg` | `app/data/projects.js` |
+| Project 2 diagram | `project-cloud.svg` | `public/images/project-cloud.svg` | `app/data/projects.js` |
+| Experience logo (SportsExcitement) | `sports-excitement-logo.svg` | `public/images/sports-excitement-logo.svg` | `app/data/experience.js` |
+| Experience logo (DreamStudio) | `dreamstudio-logo.svg` | `public/images/dreamstudio-logo.svg` | `app/data/experience.js` |
+| Certification badge (OSEP) | `osep-badge.svg` | `public/images/osep-badge.svg` | `app/data/certifications.js` |
+| Certification badge (CRTE) | `crte-badge.svg` | `public/images/crte-badge.svg` | `app/data/certifications.js` |
+| Certification badge (AWS Security Specialty) | `aws-security-badge.svg` | `public/images/aws-security-badge.svg` | `app/data/certifications.js` |
+| Certification badge (Security+) | `security-plus-badge.svg` | `public/images/security-plus-badge.svg` | `app/data/certifications.js` |
+| Certification badge ((ISC)² CC) | `isc2-cc-badge.svg` | `public/images/isc2-cc-badge.svg` | `app/data/certifications.js` |
+| OpenGraph card image | `og-card.svg` | `public/images/og-card.svg` | metadata/social preview |
+| Optional icon | `aws-icon.svg` | `public/images/aws-icon.svg` | optional visual asset |
+| Optional icon | `burp-icon.svg` | `public/images/burp-icon.svg` | optional visual asset |
+| Optional icon | `python-icon.svg` | `public/images/python-icon.svg` | optional visual asset |
 
-If you download official logos or badges, place them in `public/images/` and update the corresponding `src` paths in `app/page.js` and data files.
+### 3) Resume file
+
+- Replace `public/resume.pdf` with your real resume.
+- The site links to it via `resumeUrl` in `app/data/site.js`.
+
+### 4) If you want different file names
+
+You can rename files, but you must also update the matching paths in code:
+
+- `app/page.js` (hero/headshot and any hardcoded images)
+- `app/data/projects.js` (project diagrams)
+- `app/data/experience.js` (company logos)
+- `app/data/certifications.js` (certification badges)
+- `app/data/site.js` (resume URL)
+
+Quick check after replacing assets:
+
+```bash
+npm run check:content
+npm run build
+```
 
 ## Docs
 
