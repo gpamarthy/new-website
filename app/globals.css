@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-slate-950 text-slate-100 antialiased;
+}
+
+html.light body {
+  @apply bg-slate-50 text-slate-900;
+}
+
+.section-title {
+  @apply text-3xl font-semibold tracking-tight md:text-4xl;
+}
+
+.card {
+  @apply rounded-2xl border border-white/10 bg-white/5 p-6 shadow-command backdrop-blur;
+}
+
+html.light .card {
+  @apply border-slate-200 bg-white/70;
+}
+
+.section {
+  @apply scroll-mt-32 py-16;
+}
+
+.pill {
+  @apply rounded-full border border-white/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em];
+}
+
+a:focus-visible,
+button:focus-visible {
+  @apply outline-none ring-2 ring-emerald-300 ring-offset-2 ring-offset-slate-950;
+}
+
+html.light a:focus-visible,
+html.light button:focus-visible {
+  @apply ring-offset-slate-50;
+}
