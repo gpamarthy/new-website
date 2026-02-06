@@ -7,7 +7,7 @@ export const siteConfig = {
   tagline: "Pentesting • Cloud Security • Risk Reduction",
   mission:
     "I help teams ship secure software by combining offensive testing, cloud security hardening, and remediation-first engineering support.",
-  location: "Bay Area, USA",
+  location: "San Francisco Bay Area, California",
   phone: "(240) 495-8089",
   email: "gppamarthy@gmail.com",
   resumeUrl: `${basePath}/resume.pdf`,
