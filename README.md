@@ -83,3 +83,4 @@ If you download official logos or badges, place them in `public/images/` and upd
 
 - `EDITING.md` — update content (projects, experience, certifications, assets).
 - `DEPLOYMENT.md` — deployment and domain setup.
+- `THEMING.md` — theme tokens and contrast-safe color customization.

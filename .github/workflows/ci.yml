@@ -19,3 +19,5 @@ jobs:
         run: npm run lint
       - name: Build
         run: npm run build
+      - name: Contrast check
+        run: npm run check:contrast

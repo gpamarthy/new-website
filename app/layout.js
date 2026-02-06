@@ -57,11 +57,11 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="bg-slate-950 text-slate-100">
+      <body className="text-main">
         <ThemeProvider>
           <SkipLink />
           <Analytics />
-          <div className="min-h-screen bg-hero-glow">
+          <div className="surface-bg min-h-screen">
             <div className="mx-auto w-full max-w-6xl px-4 pb-24 pt-6">
               <SiteNav />
               <main className="pt-10" id="content">
