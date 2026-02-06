@@ -5,6 +5,7 @@ Set these in your hosting provider:
 
 - `NEXT_PUBLIC_SITE_URL` — canonical URL (e.g., `https://gouthampamarthy.com`)
 - `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` — (optional) enable analytics via Plausible
+- `ENABLE_RUNTIME_HEADERS` — `true` only on hosts that support runtime headers (set `false` for GitHub Pages)
 
 ## Option A — GitHub Pages (preview, manual publish)
 1. Set env vars locally (or in CI):

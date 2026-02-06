@@ -27,6 +27,9 @@ This project is configured for static export (`output: "export"`) so you can dep
    - `out/`
 3. Deploy the `out/` folder to GitHub Pages (for example, publish to `gh-pages` branch root).
 
+4. (Optional) for non-GitHub hosting that supports runtime headers, enable:
+   - `ENABLE_RUNTIME_HEADERS=true`
+
 ### Repo path support (`/new-website/`)
 If deploying to `https://<user>.github.io/new-website/`, keep:
 - `NEXT_PUBLIC_SITE_URL=https://<user>.github.io/new-website/`

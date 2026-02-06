@@ -4,7 +4,7 @@ export const siteConfig = {
   mission:
     "I secure cloud-native businesses by translating adversary tradecraft into measurable risk reduction. I deliver executive-ready remediation roadmaps, hardened identity controls, and resilient detection pipelines.",
   location: "Remote · Global",
-  email: "security@domain.com",
+  email: "hello@gouthampamarthy.com",
   resumeUrl: "/resume.pdf",
   canonicalUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://gpamarthy.github.io/new-website/"
 };
@@ -49,7 +49,7 @@ export const skills = [
 ];
 
 export const socialLinks = [
-  { label: "Email me", href: "mailto:security@domain.com" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/", external: true },
-  { label: "GitHub", href: "https://github.com/", external: true }
+  { label: "Email me", href: "mailto:hello@gouthampamarthy.com" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/goutham-pamarthy/", external: true },
+  { label: "GitHub", href: "https://github.com/gpamarthy", external: true }
 ];
