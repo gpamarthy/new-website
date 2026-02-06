@@ -2,57 +2,70 @@ const configuredBasePath = process.env.NEXT_PUBLIC_BASE_PATH;
 export const basePath = configuredBasePath !== undefined ? configuredBasePath : "/new-website";
 
 export const siteConfig = {
-  name: "Goutham Pamarthy",
-  title: "Offensive Security Engineer | OSEP & CRTE",
+  name: "Goutham Prasanth Pamarthy",
+  title: "Security Engineer | OSEP & CRTE",
+  tagline: "Pentesting • Cloud Security • Risk Reduction",
   mission:
-    "I secure cloud-native businesses by translating adversary tradecraft into measurable risk reduction. I deliver executive-ready remediation roadmaps, hardened identity controls, and resilient detection pipelines.",
-  location: "Remote · Global",
-  email: "hello@gouthampamarthy.com",
+    "I help teams ship secure software by combining offensive testing, cloud security hardening, and remediation-first engineering support.",
+  location: "Bay Area, USA",
+  phone: "(240) 495-8089",
+  email: "gppamarthy@gmail.com",
   resumeUrl: `${basePath}/resume.pdf`,
   canonicalUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://gpamarthy.github.io/new-website/"
 };
 
+export const education = [
+  {
+    school: "University of Maryland",
+    degree: "Master of Engineering in Cybersecurity"
+  },
+  {
+    school: "Gandhi Institute of Technology and Management",
+    degree: "Bachelor of Technology in Computer Science and Engineering"
+  }
+];
+
 export const heroStats = [
   {
-    label: "Cloud Security Assessments",
-    value: "30+",
-    detail: "Enterprise and scale-up engagements."
+    label: "Penetration Tests Delivered",
+    value: "40+",
+    detail: "API and full-stack security assessments."
   },
   {
-    label: "Risk Reduction",
-    value: "42%",
-    detail: "Average control hardening uplift."
+    label: "Detection Rules Built",
+    value: "25+",
+    detail: "AWS CloudTrail and GuardDuty detections."
   },
   {
-    label: "Detection Coverage",
-    value: "24x",
-    detail: "Expanded alerting & telemetry."
+    label: "Cloud Assets Audited",
+    value: "50+",
+    detail: "IAM and endpoint configuration hardening."
   }
 ];
 
 export const aboutHighlights = [
-  "Adversary emulation across AWS, Azure, and hybrid estates.",
-  "Cloud threat modeling and breach simulation with stakeholder briefings.",
-  "Secure architecture reviews aligned to compliance and resilience goals."
+  "OWASP Top 10 testing with developer-focused remediation guidance.",
+  "Cloud security reviews across AWS and Azure with compliance context.",
+  "DFIR enablement through SIEM workflows, memory forensics, and automation."
 ];
 
 export const skills = [
   {
-    category: "Cloud & Platform",
-    items: ["AWS", "Azure", "Kubernetes", "Terraform", "Serverless"]
+    category: "Red Team & Pentesting",
+    items: ["AD Exploitation", "AV/EDR Evasion", "C2 Frameworks", "Lateral Movement"]
   },
   {
-    category: "Offensive Security",
-    items: ["Red Team", "Adversary Emulation", "AppSec", "Penetration Testing"]
+    category: "Tooling & Detection",
+    items: ["Burp Suite", "Metasploit", "Impacket", "BloodHound", "Splunk", "ELK"]
   },
   {
-    category: "Detection & Response",
-    items: ["SIEM Engineering", "EDR Telemetry", "SOAR Automation", "Threat Hunting"]
+    category: "Cloud & Automation",
+    items: ["AWS IAM", "Azure RBAC", "KMS", "WAF", "Python", "Bash", "PowerShell"]
   }
 ];
 
 export const socialLinks = [
-  { label: "Email me", href: "mailto:hello@gouthampamarthy.com" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/goutham-pamarthy/", external: true },
+  { label: "Email me", href: "mailto:gppamarthy@gmail.com" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/gpamarthy7/", external: true },
   { label: "GitHub", href: "https://github.com/gpamarthy", external: true }
 ];

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { aboutHighlights, basePath, heroStats, siteConfig, skills, socialLinks } from "./data/site";
+import { aboutHighlights, basePath, education, heroStats, siteConfig, skills, socialLinks } from "./data/site";
 import { projects } from "./data/projects";
 import { experience } from "./data/experience";
 import { certifications } from "./data/certifications";
@@ -15,6 +15,7 @@ export default function HomePage() {
           <div className="space-y-6">
             <p className="pill">Declassified Enterprise Portfolio</p>
             <h1 className="text-main text-4xl font-semibold leading-tight md:text-5xl">{siteConfig.title}</h1>
+            <p className="text-accent text-sm font-semibold uppercase tracking-[0.3em]">{siteConfig.tagline}</p>
             <p className="text-muted text-lg">{siteConfig.mission}</p>
             <div className="flex flex-wrap gap-4">
               <a href={siteConfig.resumeUrl} className="btn-primary">
@@ -62,8 +63,8 @@ export default function HomePage() {
       </section>
 
       <section id="about" className="section">
-        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="space-y-4">
+        <div className="grid gap-6 lg:grid-cols-3">
+          <div className="space-y-4 lg:col-span-1">
             <p className="pill">About</p>
             <h2 className="section-title">Mission-ready offensive security leadership.</h2>
             <p className="text-muted">
@@ -71,11 +72,21 @@ export default function HomePage() {
               Engagements focus on measurable risk reduction, resiliency, and clear remediation roadmaps.
             </p>
           </div>
-          <div className="card space-y-3">
+          <div className="card space-y-3 lg:col-span-1">
             <p className="text-accent text-xs font-semibold uppercase tracking-[0.3em]">Focus Areas</p>
             <ul className="text-muted space-y-2 text-sm">
               {aboutHighlights.map((item) => (
                 <li key={item}>• {item}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="card space-y-3 lg:col-span-1">
+            <p className="text-accent text-xs font-semibold uppercase tracking-[0.3em]">Education</p>
+            <ul className="text-muted space-y-2 text-sm">
+              {education.map((item) => (
+                <li key={item.school}>
+                  <span className="text-main font-semibold">{item.school}</span> — {item.degree}
+                </li>
               ))}
             </ul>
           </div>
@@ -231,6 +242,10 @@ export default function HomePage() {
             <div className="text-muted flex items-center justify-between text-sm">
               <span>Primary Email</span>
               <span className="text-accent font-semibold">{siteConfig.email}</span>
+            </div>
+            <div className="text-muted flex items-center justify-between text-sm">
+              <span>Phone</span>
+              <span className="text-accent font-semibold">{siteConfig.phone}</span>
             </div>
             <div className="text-muted flex items-center justify-between text-sm">
               <span>Location</span>
