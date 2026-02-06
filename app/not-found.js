@@ -1,4 +1,5 @@
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+const configuredBasePath = process.env.NEXT_PUBLIC_BASE_PATH;
+const basePath = configuredBasePath !== undefined ? configuredBasePath : "/new-website";
 
 export default function NotFound() {
   return (

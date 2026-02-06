@@ -1,8 +1,11 @@
 import Image from "next/image";
-import { aboutHighlights, heroStats, siteConfig, skills, socialLinks } from "./data/site";
+import { aboutHighlights, basePath, heroStats, siteConfig, skills, socialLinks } from "./data/site";
 import { projects } from "./data/projects";
 import { experience } from "./data/experience";
 import { certifications } from "./data/certifications";
+
+
+const asset = (path) => `${basePath}${path.startsWith("/") ? path : `/${path}`}`;
 
 export default function HomePage() {
   return (
@@ -32,7 +35,7 @@ export default function HomePage() {
           </div>
           <div className="card flex flex-col items-center gap-6 text-center">
             <Image
-              src="/images/headshot-placeholder.svg"
+              src={asset("/images/headshot-placeholder.svg")}
               alt="Professional headshot placeholder"
               width={360}
               height={360}
@@ -138,7 +141,7 @@ export default function HomePage() {
               </div>
               <div className="card flex items-center justify-center p-4">
                 <Image
-                  src={project.diagram}
+                  src={asset(project.diagram)}
                   alt={`${project.title} architecture placeholder`}
                   width={640}
                   height={420}
@@ -168,7 +171,7 @@ export default function HomePage() {
               </div>
               <div className="card space-y-4">
                 <div className="flex flex-wrap items-center gap-4">
-                  <Image src={role.logo} alt={`${role.company} logo`} width={180} height={72} />
+                  <Image src={asset(role.logo)} alt={`${role.company} logo`} width={180} height={72} />
                   <div>
                     <h3 className="text-main text-xl font-semibold">{role.role}</h3>
                     <p className="text-muted text-sm">
@@ -196,7 +199,7 @@ export default function HomePage() {
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {certifications.map((cert) => (
             <div key={cert.name} className="card flex flex-col items-center gap-4 text-center">
-              <Image src={cert.badge} alt={`${cert.name} badge`} width={200} height={200} />
+              <Image src={asset(cert.badge)} alt={`${cert.name} badge`} width={200} height={200} />
               <div>
                 <p className="text-main text-sm font-semibold">{cert.name}</p>
                 <p className="text-subtle text-xs">{cert.issuer}</p>

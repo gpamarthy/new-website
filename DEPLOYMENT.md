@@ -10,7 +10,7 @@ Set these in your hosting provider:
 ## Option A — GitHub Pages (preview, manual publish)
 1. Set env vars locally (or in CI):
    - `NEXT_PUBLIC_SITE_URL=https://<user>.github.io/new-website/` (or your custom domain)
-2. Set `NEXT_PUBLIC_BASE_PATH=/new-website` when publishing to `<user>.github.io/new-website/` (leave empty for apex custom domain).
+2. Defaults are GitHub Pages-safe (`NEXT_PUBLIC_BASE_PATH=/new-website`). For custom apex domains, set `NEXT_PUBLIC_BASE_PATH=` (empty).
 3. Build static output:
    ```bash
    npm run build
