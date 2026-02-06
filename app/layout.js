@@ -3,7 +3,7 @@ import Analytics from "../components/analytics";
 import SiteNav from "../components/site-nav";
 import SkipLink from "../components/skip-link";
 import ThemeProvider from "../components/theme-provider";
-import { basePath, siteConfig, socialLinks } from "./data/site";
+import { siteConfig, socialLinks } from "./data/site";
 
 const metadataBase = new URL(siteConfig.canonicalUrl);
 
@@ -26,7 +26,7 @@ export const metadata = {
     siteName: siteConfig.name,
     images: [
       {
-        url: `${basePath}/images/og-card.svg`,
+        url: "/images/og-card.svg",
         width: 1200,
         height: 630,
         alt: `${siteConfig.name} portfolio`
@@ -40,7 +40,7 @@ export const metadata = {
     title: `${siteConfig.name} | Offensive Security Engineer`,
     description:
       "Offensive security engineer portfolio featuring cloud defense, red team operations, and security program leadership.",
-    images: [`${basePath}/images/og-card.svg`]
+    images: ["/images/og-card.svg"]
   }
 };
 

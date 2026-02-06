@@ -10,11 +10,11 @@ const asset = (path) => `${basePath}${path.startsWith("/") ? path : `/${path}`}`
 export default function HomePage() {
   return (
     <div>
-      <section id="home" className="section">
+      <section id="home" className="section" aria-labelledby="home-title">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="space-y-6">
             <p className="pill">Declassified Enterprise Portfolio</p>
-            <h1 className="text-main text-4xl font-semibold leading-tight md:text-5xl">{siteConfig.title}</h1>
+            <h1 id="home-title" className="text-main text-4xl font-semibold leading-tight md:text-5xl">{siteConfig.title}</h1>
             <p className="text-accent text-sm font-semibold uppercase tracking-[0.3em]">{siteConfig.tagline}</p>
             <p className="text-muted text-lg">{siteConfig.mission}</p>
             <div className="flex flex-wrap gap-4">
@@ -60,11 +60,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="about" className="section">
+      <section id="about" className="section" aria-labelledby="about-title">
         <div className="grid gap-6 lg:grid-cols-3">
           <div className="space-y-4 lg:col-span-1">
             <p className="pill">About</p>
-            <h2 className="section-title">Mission-ready offensive security leadership.</h2>
+            <h2 id="about-title" className="section-title">Mission-ready offensive security leadership.</h2>
             <p className="text-muted">
               I partner with security and engineering leaders to validate defenses against real adversary tactics.
               Engagements focus on measurable risk reduction, resiliency, and clear remediation roadmaps.
@@ -91,10 +91,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="skills" className="section">
+      <section id="skills" className="section" aria-labelledby="skills-title">
         <div className="space-y-6">
           <p className="pill">Skills</p>
-          <h2 className="section-title">Core security capabilities.</h2>
+          <h2 id="skills-title" className="section-title">Core security capabilities.</h2>
         </div>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {skills.map((group) => (
@@ -112,10 +112,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="projects" className="section">
+      <section id="projects" className="section" aria-labelledby="projects-title">
         <div className="space-y-4">
           <p className="pill">Projects</p>
-          <h2 className="section-title">Security engagements with measurable outcomes.</h2>
+          <h2 id="projects-title" className="section-title">Security engagements with measurable outcomes.</h2>
           <p className="text-muted">Project dossiers are structured to highlight findings, remediation, and business impact.</p>
         </div>
         <div className="mt-8 grid gap-8">
@@ -162,10 +162,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="experience" className="section">
+      <section id="experience" className="section" aria-labelledby="experience-title">
         <div className="space-y-4">
           <p className="pill">Experience</p>
-          <h2 className="section-title">Operational timeline.</h2>
+          <h2 id="experience-title" className="section-title">Operational timeline.</h2>
         </div>
         <div className="mt-8 space-y-8">
           {experience.map((role, index) => (
@@ -200,10 +200,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="certifications" className="section">
+      <section id="certifications" className="section" aria-labelledby="certifications-title">
         <div className="space-y-4">
           <p className="pill">Certifications</p>
-          <h2 className="section-title">Verified credentials.</h2>
+          <h2 id="certifications-title" className="section-title">Verified credentials.</h2>
         </div>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {certifications.map((cert) => (
@@ -218,11 +218,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="contact" className="section">
+      <section id="contact" className="section" aria-labelledby="contact-title">
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-4">
             <p className="pill">Contact</p>
-            <h2 className="section-title">Secure comms channel.</h2>
+            <h2 id="contact-title" className="section-title">Secure comms channel.</h2>
             <p className="text-muted">
               Provide scope objectives, compliance constraints, and timelines. I will return a mission plan with
               deliverables, testing windows, and a remediation roadmap.
@@ -239,11 +239,11 @@ export default function HomePage() {
           <div className="card space-y-4">
             <div className="text-muted flex items-center justify-between text-sm">
               <span>Primary Email</span>
-              <span className="text-accent font-semibold">{siteConfig.email}</span>
+              <a href={`mailto:${siteConfig.email}`} className="text-accent font-semibold hover:underline">{siteConfig.email}</a>
             </div>
             <div className="text-muted flex items-center justify-between text-sm">
               <span>Phone</span>
-              <span className="text-accent font-semibold">{siteConfig.phone}</span>
+              <a href={`tel:${siteConfig.phone.replace(/[^0-9+]/g, "")}`} className="text-accent font-semibold hover:underline">{siteConfig.phone}</a>
             </div>
             <div className="text-muted flex items-center justify-between text-sm">
               <span>Location</span>
