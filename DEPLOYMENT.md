@@ -6,50 +6,49 @@ Set these in your hosting provider:
 - `NEXT_PUBLIC_SITE_URL` — canonical URL (e.g., `https://gouthampamarthy.com`)
 - `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` — (optional) enable analytics via Plausible
 
-## Option A — Cloudflare Pages (recommended)
+## Option A — GitHub Pages (preview, manual publish)
+1. Set env vars locally (or in CI):
+   - `NEXT_PUBLIC_SITE_URL=https://<user>.github.io/new-website/` (or your custom domain)
+2. Build static output:
+   ```bash
+   npm run build
+   ```
+3. Publish the generated `out/` directory to GitHub Pages.
+4. If using a custom domain, add `public/CNAME` with your domain before building.
+
+### GitHub Pages DNS for custom domain
+For apex domain:
+- `A 185.199.108.153`
+- `A 185.199.109.153`
+- `A 185.199.110.153`
+- `A 185.199.111.153`
+
+For `www`:
+- `CNAME www -> <your-github-username>.github.io`
+
+Enable **Enforce HTTPS** in GitHub Pages settings.
+
+## Option B — Cloudflare Pages
 1. Connect the GitHub repo in Cloudflare Pages.
 2. Build command: `npm run build`
-3. Build output directory: `.next`
-4. If prompted, install the `@cloudflare/next-on-pages` adapter and follow Cloudflare’s setup wizard.
-5. Add the custom domain in Cloudflare Pages → **Custom domains**.
+3. Build output directory: `out`
+4. Add custom domain in Cloudflare Pages → **Custom domains**.
 
 ### DNS records (Cloudflare-managed DNS)
-If your domain is on Cloudflare, add:
-
 | Type | Name | Target |
 | --- | --- | --- |
 | CNAME | `www` | `<your-cloudflare-pages-subdomain>.pages.dev` |
 | CNAME | `@` | `<your-cloudflare-pages-subdomain>.pages.dev` |
 
-Enable **HTTP → HTTPS** and **www → apex** (or apex → www) in Cloudflare’s redirect rules.
+Enable **HTTP → HTTPS** and **www → apex** (or apex → www) in Cloudflare redirect rules.
 
-## Option B — Vercel (implemented)
-1. Import the GitHub repo into Vercel.
-2. Framework preset: **Next.js** (auto-detected)
-3. Build command: `npm run build`
-4. Output: default (handled by Next.js)
-5. Add environment variables listed above.
-6. Deploy.
-
-### DNS records (Vercel)
-In your DNS provider, add the following:
-
-| Type | Name | Target |
-| --- | --- | --- |
-| A | `@` | `76.76.21.21` |
-| CNAME | `www` | `cname.vercel-dns.com` |
-
-### Redirects
-- Enable **www → apex** (or apex → www) in Vercel Domains settings.
-- Vercel automatically enforces **HTTP → HTTPS**.
-
-## Security headers
-Security headers are configured in `next.config.js` and will apply at the edge in both Vercel and Cloudflare:
-- CSP, HSTS, X-Content-Type-Options, X-Frame-Options, Referrer-Policy
+## Security headers note
+This repo defines security headers in `next.config.js` for platforms that support runtime headers (Vercel/Cloudflare Workers).
+GitHub Pages is static hosting and does not apply custom response headers.
 
 ## Verification checklist
-- [ ] `NEXT_PUBLIC_SITE_URL` points to your new domain
+- [ ] `NEXT_PUBLIC_SITE_URL` points to the live domain
 - [ ] DNS records propagate
 - [ ] `https://yourdomain.com/robots.txt` resolves
 - [ ] `https://yourdomain.com/sitemap.xml` resolves
-- [ ] Lighthouse scores meet targets
+- [ ] HTTPS is enforced

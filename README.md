@@ -15,39 +15,52 @@ A single-page, data-driven portfolio with dark/light theming and a declassified 
 3. Open the preview:
    - http://localhost:3000
 
-## Production build preview
+## GitHub Pages preview (manual deploy)
 
-1. Create an optimized build:
+This project is configured for static export (`output: "export"`) so you can deploy it to GitHub Pages manually.
+
+1. Build static output:
    ```bash
    npm run build
    ```
-2. Run the production server:
-   ```bash
-   npm run start
+2. The generated site will be in:
+   - `out/`
+3. Deploy the `out/` folder to GitHub Pages (for example, publish to `gh-pages` branch root).
+
+### Repo path support (`/new-website/`)
+If deploying to `https://<user>.github.io/new-website/`, keep:
+- `NEXT_PUBLIC_SITE_URL=https://<user>.github.io/new-website/`
+
+## Custom domain hosting (GitHub Pages)
+
+If you want a custom domain (e.g., `gouthampamarthy.com`):
+
+1. Create a file at:
+   - `public/CNAME`
+2. Put your domain in that file (single line), for example:
    ```
-3. Visit:
-   - http://localhost:3000
+   gouthampamarthy.com
+   ```
+3. Build again:
+   ```bash
+   npm run build
+   ```
+4. Deploy `out/` to GitHub Pages.
+5. In GitHub repo settings → Pages:
+   - Set Custom domain to your domain.
+   - Enable **Enforce HTTPS**.
 
-## Hosting instructions
+### DNS records for GitHub Pages
 
-### Vercel (recommended)
-1. Import the GitHub repo into Vercel.
-2. Framework preset: **Next.js**
-3. Build command: `npm run build`
-4. Output: **Default** (handled by Next.js)
-5. Deploy.
+At your DNS provider:
 
-### Netlify
-1. Connect the repo.
-2. Build command: `npm run build`
-3. Publish directory: `.next`
-4. Add the Next.js Runtime (Netlify will prompt automatically).
-
-### Cloudflare Pages
-1. Connect the repo.
-2. Build command: `npm run build`
-3. Build output directory: `.next`
-4. Add the `@cloudflare/next-on-pages` adapter if prompted by Cloudflare.
+- For apex domain (`gouthampamarthy.com`), add **A** records:
+  - `185.199.108.153`
+  - `185.199.109.153`
+  - `185.199.110.153`
+  - `185.199.111.153`
+- For `www`, add **CNAME**:
+  - `www` → `<your-github-username>.github.io`
 
 ## Asset downloads & placement
 
@@ -59,6 +72,7 @@ Place custom assets in `public/images/` so Next.js can serve them with the `<Ima
 | Project diagrams | `project-topology.svg`, `project-cloud.svg` | `public/images/` | Used in the Projects section. |
 | Company logos | `sports-excitement-logo.svg`, `dreamstudio-logo.svg` | `public/images/` | Used in Experience timeline. |
 | Certification badges | `osep-badge.svg`, `crte-badge.svg`, `aws-security-badge.svg` | `public/images/` | Used in Certifications section. |
+| Resume | `resume.pdf` | `public/` | Replace placeholder with your actual resume. |
 
 If you download official logos or badges, place them in `public/images/` and update the corresponding `src` paths in `app/page.js` and data files.
 

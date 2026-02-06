@@ -1,7 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: "export",
+  eslint: {
+    ignoreDuringBuilds: true
+  },
+  trailingSlash: true,
   images: {
-    formats: ["image/avif", "image/webp"]
+    formats: ["image/avif", "image/webp"],
+    unoptimized: true
   },
   async headers() {
     return [
