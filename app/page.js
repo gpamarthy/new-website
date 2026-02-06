@@ -34,19 +34,17 @@ export default function HomePage() {
               ))}
             </div>
           </div>
-          <div className="card flex flex-col items-center gap-6 text-center">
-            <Image
-              src={asset("/images/headshot-placeholder.svg")}
-              alt="Professional headshot placeholder"
-              width={360}
-              height={360}
-              className="h-60 w-60 rounded-3xl object-cover"
-              priority
-            />
-            <div className="space-y-2">
-              <p className="text-accent text-xs font-semibold uppercase tracking-[0.3em]">Focus</p>
-              <p className="text-main text-lg font-medium">Cloud Security | Red Team | Risk Reduction</p>
-              <p className="text-subtle text-sm">{siteConfig.location}</p>
+          <div className="card space-y-4">
+            <p className="text-accent text-xs font-semibold uppercase tracking-[0.3em]">Core Focus</p>
+            <p className="text-main text-lg font-semibold">Cloud Security | Red Team | Risk Reduction</p>
+            <p className="text-muted text-sm">
+              Security engineer with hands-on experience in pentesting, secure SDLC reviews, and cloud risk reduction
+              across AWS and Azure environments.
+            </p>
+            <div className="space-y-2 text-sm">
+              <p className="text-muted"><span className="text-main font-semibold">Location:</span> {siteConfig.location}</p>
+              <p className="text-muted"><span className="text-main font-semibold">Email:</span> {siteConfig.email}</p>
+              <p className="text-muted"><span className="text-main font-semibold">Phone:</span> {siteConfig.phone}</p>
             </div>
           </div>
         </div>
