@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --bg: #020617;
+  --surface: #0b1220;
+  --surface-elevated: rgba(255, 255, 255, 0.06);
+  --text: #f8fafc;
+  --text-muted: #cbd5e1;
+  --text-subtle: #94a3b8;
+  --border: rgba(148, 163, 184, 0.35);
+  --accent: #34d399;
+  --accent-contrast: #062014;
+  --focus-ring: #34d399;
+}
+
+html.light {
+  color-scheme: light;
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --surface-elevated: #ffffff;
+  --text: #0f172a;
+  --text-muted: #334155;
+  --text-subtle: #475569;
+  --border: rgba(15, 23, 42, 0.18);
+  --accent: #047857;
+  --accent-contrast: #ffffff;
+  --focus-ring: #047857;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  @apply antialiased;
+}
+
+.surface-bg {
+  background: radial-gradient(circle at top, rgba(16, 185, 129, 0.14), transparent 48%), var(--bg);
+}
+
+.text-main {
+  color: var(--text);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-subtle {
+  color: var(--text-subtle);
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.section-title {
+  @apply text-3xl font-semibold tracking-tight md:text-4xl;
+  color: var(--text);
+}
+
+.card {
+  @apply rounded-2xl p-6 shadow-command backdrop-blur;
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+}
+
+.section {
+  @apply scroll-mt-32 py-16;
+}
+
+.pill {
+  @apply rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em];
+  border: 1px solid var(--border);
+  color: var(--accent);
+}
+
+.btn-primary {
+  @apply rounded-full px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] transition;
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.btn-primary:hover {
+  filter: brightness(1.08);
+}
+
+.btn-secondary {
+  @apply rounded-full px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] transition;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.tag {
+  @apply rounded-full px-3 py-1 text-xs font-semibold;
+  border: 1px solid rgba(4, 120, 87, 0.32);
+  background: rgba(4, 120, 87, 0.1);
+  color: #065f46;
+}
+
+html.dark .tag {
+  border-color: rgba(52, 211, 153, 0.34);
+  background: rgba(16, 185, 129, 0.14);
+  color: #a7f3d0;
+}
+
+a:focus-visible,
+button:focus-visible {
+  @apply outline-none ring-2 ring-offset-2;
+  --tw-ring-color: var(--focus-ring);
+  --tw-ring-offset-color: var(--bg);
+}
