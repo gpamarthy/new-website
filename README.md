@@ -1,6 +1,6 @@
 # Portfolio Website (Next.js 15)
 
-A multipage Next.js portfolio with dark/light theming, Framer Motion page transitions, and a declassified enterprise aesthetic.
+A single-page, data-driven portfolio with dark/light theming and a declassified enterprise aesthetic.
 
 ## Local preview instructions
 
@@ -55,10 +55,14 @@ Place custom assets in `public/images/` so Next.js can serve them with the `<Ima
 
 | Asset | File name | Location | Notes |
 | --- | --- | --- | --- |
-| Headshot | `headshot-placeholder.svg` (replace with your photo, keep name or update in `app/page.js`) | `public/images/` | Update the `src` in `app/page.js` if the filename changes. |
-| Project diagrams | `project-topology.svg`, `project-cloud.svg` | `public/images/` | Used in `app/operations/page.js`. Replace with real topology/architecture graphics. |
-| Company logos | `sports-excitement-logo.svg`, `dreamstudio-logo.svg` | `public/images/` | Used in `app/briefing/page.js`. |
-| Stack icons | `aws-icon.svg`, `python-icon.svg`, `burp-icon.svg` | `public/images/` | Used in `app/briefing/page.js`. |
-| Cert badges | `osep-badge.svg`, `crte-badge.svg`, `aws-security-badge.svg` | `public/images/` | Used in `app/certifications/page.js`. |
+| Headshot | `headshot-placeholder.svg` | `public/images/` | Update `app/page.js` if the filename changes. |
+| Project diagrams | `project-topology.svg`, `project-cloud.svg` | `public/images/` | Used in the Projects section. |
+| Company logos | `sports-excitement-logo.svg`, `dreamstudio-logo.svg` | `public/images/` | Used in Experience timeline. |
+| Certification badges | `osep-badge.svg`, `crte-badge.svg`, `aws-security-badge.svg` | `public/images/` | Used in Certifications section. |
 
-If you download official logos or badges, place them in `public/images/` and update the corresponding `src` paths in the page files above.
+If you download official logos or badges, place them in `public/images/` and update the corresponding `src` paths in `app/page.js` and data files.
+
+## Docs
+
+- `EDITING.md` — update content (projects, experience, certifications, assets).
+- `DEPLOYMENT.md` — deployment and domain setup.

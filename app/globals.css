@@ -3,7 +3,11 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  color-scheme: light dark;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -15,7 +19,7 @@ html.light body {
 }
 
 .section-title {
-  @apply text-3xl font-semibold tracking-tight;
+  @apply text-3xl font-semibold tracking-tight md:text-4xl;
 }
 
 .card {
@@ -24,4 +28,22 @@ html.light body {
 
 html.light .card {
   @apply border-slate-200 bg-white/70;
+}
+
+.section {
+  @apply scroll-mt-32 py-16;
+}
+
+.pill {
+  @apply rounded-full border border-white/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em];
+}
+
+a:focus-visible,
+button:focus-visible {
+  @apply outline-none ring-2 ring-emerald-300 ring-offset-2 ring-offset-slate-950;
+}
+
+html.light a:focus-visible,
+html.light button:focus-visible {
+  @apply ring-offset-slate-50;
 }
