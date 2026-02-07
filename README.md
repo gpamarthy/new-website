@@ -115,8 +115,8 @@ You can rename files, but you must also update the matching paths in code:
 Quick check after replacing assets:
 
 ```bash
-npm run check:content
 npm run build
+npm run check:content
 ```
 
 ## Docs
